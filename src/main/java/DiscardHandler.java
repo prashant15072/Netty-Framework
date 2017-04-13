@@ -9,7 +9,7 @@ public class DiscardHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
-        ByteBuf a=(ByteBuf)msg;
+        /*ByteBuf a=(ByteBuf)msg;
         try {
             while (a.isReadable()){
                 System.out.println((char) a.readByte());
@@ -18,7 +18,9 @@ public class DiscardHandler extends ChannelInboundHandlerAdapter {
         }
         finally {
             a.release();
-        }
+        }*/
+        ctx.write(msg);
+        ctx.flush();
     }
 
     @Override

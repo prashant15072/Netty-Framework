@@ -39,7 +39,7 @@ public class DiscardServer {
     }
 
     public static void main(String args[]) throws Exception {
-        int port=8;
+        int port=16;
         new DiscardServer(port).run();
     }
 }
